@@ -23,7 +23,7 @@ public class JavaStudy03 {
             fee = free;
         } else if ( age < 13 || time > 17 ) {
             fee = specialDiscount;
-        } else if ( nationalMerit.equals("y") || welfareCard.equals("y") ) {
+        } else if ( "y".equals(nationalMerit) || "y".equals(welfareCard) ) {
             fee = Discount;
         } else {
             fee = basic;

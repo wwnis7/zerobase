@@ -18,9 +18,9 @@ public class JavaStudy06 {
         int voteCount;
 
         for (int total = 1; total <= 10_000; total++) {
-            vote = rnd.nextInt(4);
+            vote = rnd.nextInt(candidates.length);
             String candid = candidates[vote];
-            voteCounts[vote] += 1;
+            voteCounts[vote]++;
             System.out.printf("\n[투표진행: %05.2f%%, %d명 투표 => %s]%n",  (float) total/10_000 * 100 , total, candid);
             for (int i = 0; i < candidates.length; i++) {
                 voteCount = voteCounts[i];

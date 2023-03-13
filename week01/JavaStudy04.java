@@ -28,7 +28,7 @@ public class JavaStudy04 {
 
         String first = String.format("%02d%02d%02d", year % 100, month, day);
         Random rnd = new Random();
-        int last = rnd.nextInt((int) 1e6);
+        int last = rnd.nextInt((int) 1_000_000);
         String second = String.format("%d%06d", sexValue, last);
 
         System.out.print(first + "-" + second);

@@ -11,13 +11,20 @@ public class JavaStudy07 {
 
         String id;
         HashMap<String, Set> idToNumbers = new HashMap<>();
+        ArrayList list = new ArrayList();
+        for (int num = 1; num <= 45; num++) {
+            list.add(num);
+        }
         for (int i = 1; i <= count; i++) {
             id = String.valueOf((char) (i + 64));
 
             Set<Integer> numbers = new HashSet<>();
-            while (numbers.size() < 6) {
-                numbers.add(rnd.nextInt(45) + 1);
+            ArrayList list1 = (ArrayList) list.clone();
+            for (int j = 1; j <= 6; j++) {
+                int idx = rnd.nextInt(45 - numbers.size());
+                numbers.add((int) list1.remove(idx));
             }
+
             result = showNumbers(numbers);
             System.out.println(id + "\t" + result);
             idToNumbers.put(id, numbers);
@@ -25,8 +32,10 @@ public class JavaStudy07 {
 
         System.out.println("\n[로또 발표]");
         Set<Integer> winNumbers = new HashSet<>();
-        while (winNumbers.size() < 6) {
-            winNumbers.add(rnd.nextInt(45) + 1);
+        ArrayList list1 = (ArrayList) list.clone();
+        for (int j = 1; j <= 6; j++) {
+            int idx = rnd.nextInt(45 - winNumbers.size());
+            winNumbers.add((int) list1.remove(idx));
         }
         result = showNumbers(winNumbers);
         System.out.println("\t" + result);
